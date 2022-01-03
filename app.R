@@ -331,7 +331,7 @@ tabPanel("Gamma",
            h2("Gamma  Distribution"),
            withMathJax(),
            helpText('$$X \\sim {\\sf Gamma}(k,\\theta)$$'),
-           helpText('$$f(x)=\\frac{x^{k-1}e^{-x/\\theta}}{\\theta^k \\Gamma(k)}, \\Gamma(k)=(k-1)!$$'),
+           helpText('$$f(x)=\\frac{x^{k-1}e^{-x/\\theta}}{\\theta^k \\Gamma(k)}$$'),
            helpText('$$E[X]=k\\theta, Var[X]=k\\theta^2$$'),
          ),  
          sidebarLayout(
@@ -520,7 +520,7 @@ server <- function(input, output) {
     normal_plot <- reactive({
       plot(seq(input$normal_mu-4*input$normal_sigma,input$normal_mu+4*input$normal_sigma,by = .1),dnorm(seq(input$normal_mu-4*input$normal_sigma,input$normal_mu+4*input$normal_sigma,by = .1),mean=input$normal_mu,sd=input$normal_sigma),
            col='red',type='b',pch=20,main='Normal Distribution',
-           xlab='x', ylab='Probability'
+           xlab='x', ylab='f(x)'
       )
       grid()
     })
@@ -546,7 +546,7 @@ server <- function(input, output) {
     exp_plot <- reactive({
       plot(seq(0,input$exp_x,by = .1),dexp(seq(0,input$exp_x,by = .1),rate=input$exp_lambda),
            col='red',type='b',pch=20,main='Exponential Distribution',
-           xlab='x', ylab='Probability'
+           xlab='x', ylab='f(x)'
       )
       grid()
     })
@@ -571,7 +571,7 @@ server <- function(input, output) {
     uniform_plot <- reactive({
       plot(seq(0,2*input$uniform_b,by = .5),dunif(seq(0,2*input$uniform_b,by = .5),input$uniform_a,input$uniform_b),
            col='red',type='b',pch=20,main='Uniform Distribution',
-           xlab='x', ylab='Probability'
+           xlab='x', ylab='f(x)'
       )
       grid()
     })
@@ -597,7 +597,7 @@ server <- function(input, output) {
     gamma_plot <- reactive({
       plot(seq(0,2*input$gamma_x,by = .5),dgamma(seq(0,2*input$gamma_x,by = .5),shape=input$gamma_shape,scale=input$gamma_scale),
            col='red',type='b',pch=20,main='Gamma Distribution',
-           xlab='x', ylab='Probability'
+           xlab='x', ylab='f(x)'
       )
       grid()
     })
