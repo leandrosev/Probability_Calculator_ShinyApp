@@ -1,6 +1,7 @@
-# Probability_Calculator_ShinyApp
+# Probability Calculator App
 
 # R Shiny application that computes probabilities from several common distributions
+
 # Available online using Heroku:
 https://probcalc.herokuapp.com/
 
